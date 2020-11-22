@@ -4,12 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AuthentificationController{
+public class MainController {
 
-	@GetMapping("/accueil")
+	@GetMapping("/filmotheque")
 	public String getAuthentificationPage() {
 		return "index";
 	}
-	
-
 }
