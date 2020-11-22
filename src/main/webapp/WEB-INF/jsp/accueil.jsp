@@ -19,8 +19,9 @@
 <body>
 
 	<nav class="navbar navbar-default navbar-fixed-top">
+		Filmotheque
 		<div class="container">
-			
+		
 		</div>
 	</nav>
 
