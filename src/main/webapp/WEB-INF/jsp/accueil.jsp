@@ -28,27 +28,21 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1>
-				Bienvenue <small>dans l'application chifoumi !</small>
+				Bienvenue <small>dans l'application filmotheque !</small>
 				
 			</h1>
 		</div>
 
-			<p class="h3">
-			JOUEZ !
-			</p>
-			<form action="/demoMVC/demoParamHttp" method="post">
-			<div class="row">
-				<div class="row">
-					<a href=""><img alt="chi" src="/img/chi.png" id="chi"></a>
-				</div>
-				<div class="row">
-					<a href=""><img alt="fou" src="/img/fou.png" id="fou"></a>
-				</div>
-				<div class="row">
-					<a href=""><img alt="mi" src="/img/mi.png" id="mi"></a>
-				</div>
-				</div>
-			</form>
+<h2>Formulaire de saisie :</h2>
+	<form:form method="POST" action="/filmotheque/ajout" modelAttribute="person">
+		<div>
+			<form:label path="name">Nom :</form:label>
+			<form:input path="name"/>
+		</div>
+		<div>
+			<input type="submit" value="Submit"/>	
+		</div>
+	</form:form>
 
 
 	</div>
