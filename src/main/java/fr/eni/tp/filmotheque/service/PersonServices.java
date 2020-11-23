@@ -8,5 +8,5 @@ public interface PersonServices {
 	
 	public void deletePerson(Person person);
 	
-	public Person modifyPerson(Person person);
+	public void modifyPerson(Person person);
 }

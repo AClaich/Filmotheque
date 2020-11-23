@@ -21,14 +21,13 @@ public class PersonServiceImpl implements PersonServices{
 
 	@Override
 	public void deletePerson(Person person) {
-		// TODO Auto-generated method stub
+		personDAO.delete(person);
 		
 	}
 
 	@Override
-	public Person modifyPerson(Person person) {
-		// TODO Auto-generated method stub
-		return null;
+	public void modifyPerson(Person person) {
+		personDAO.save(person);
 	}
 
 }
