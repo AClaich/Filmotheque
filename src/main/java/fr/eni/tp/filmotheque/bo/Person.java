@@ -15,6 +15,9 @@ public class Person {
 	
 	@Column(length = 50, nullable = false)
 	private String name;
+
+	@Column(length = 50, nullable = false)
+	private String firstname;
 	
 	public Person() {
 		// TODO Auto-generated constructor stub
