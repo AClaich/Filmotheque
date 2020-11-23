@@ -10,5 +10,5 @@ public class Actor {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int id;
+	private int id;
 }

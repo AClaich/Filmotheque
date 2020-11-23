@@ -1,5 +1,6 @@
 package fr.eni.tp.filmotheque.bo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +11,26 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int id;
+	private int id;
+	
+	@Column(length = 50, nullable = false)
+	private String name;
+	
+	public Category() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Category(String name) {
+		this.name=name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	
 }

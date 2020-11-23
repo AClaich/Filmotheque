@@ -11,7 +11,7 @@ public class Person {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int id;
+	private int id;
 	
 	@Column(length = 50, nullable = false)
 	private String name;
@@ -19,12 +19,17 @@ public class Person {
 	@Column(length = 50, nullable = false)
 	private String firstname;
 	
+	@Column(length = 3, nullable = false)
+	private int birthYear;
+	
 	public Person() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Person(String name) {
+	public Person(String name, String firstname, int birthYear) {
 		this.name=name;
+		this.firstname=firstname;
+		this.birthYear=birthYear;
 	}
 
 	public String getName() {
@@ -34,6 +39,24 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public int getBirthYear() {
+		return birthYear;
+	}
+
+	public void setBirthYear(int birthYear) {
+		this.birthYear = birthYear;
+	}
+	
+	
 	
 	
 }

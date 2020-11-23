@@ -30,7 +30,6 @@ public class MainController {
 	@GetMapping("/accueil")
 	public String setPerson() {
 		
-		
 		return "accueil";
 	}
 	

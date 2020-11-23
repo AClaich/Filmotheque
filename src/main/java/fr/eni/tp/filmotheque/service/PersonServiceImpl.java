@@ -19,4 +19,16 @@ public class PersonServiceImpl implements PersonServices{
 		personDAO.save(person);
 	}
 
+	@Override
+	public void deletePerson(Person person) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Person modifyPerson(Person person) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
