@@ -22,18 +22,19 @@ public class MainController {
 		return new Person();
 	}
 
-	@GetMapping("/filmotheque")
-	public String getAuthentificationPage() {
+	
+	@GetMapping("/accueil")
+	public String getMainPage() {
 		return "index";
 	}
 	
-	@GetMapping("/accueil")
+	@GetMapping("/ajout_person")
 	public String setPerson() {
 		
 		return "accueil";
 	}
 	
-	@PostMapping("/ajout")
+	@PostMapping("/ajout_person/validate")
 	public String addPerson(@ModelAttribute("person") Person person) {
 		
 		this.personService.addPerson(person);
