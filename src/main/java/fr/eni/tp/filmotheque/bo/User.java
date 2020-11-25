@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -14,16 +14,28 @@ public class User {
 	@Id
 	@Column(length = 50)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(length = 50, nullable = false, unique = true)
 	private String username;
 	
-	@Column(length = 50, nullable = false)
+	@Column(length = 500, nullable = false)
 	private String password;
 
-	@OneToOne()
+	@ManyToOne
 	private Role role;
 	
 	public User() {
 		
+	}
+	
+	public User(String username) {
+		this.username=username;
+	}
+	
+	public User(String username, String password) {
+		this.username=username;
+		this.password=password;
 	}
 	
 	public User(String username, String password, Role role) {
@@ -51,10 +63,14 @@ public class User {
 	public Role getRole() {
 		return role;
 	}
-
+	
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+	}
 	
 }

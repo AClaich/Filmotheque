@@ -4,11 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.tp.filmotheque.bo.Person;
+import fr.eni.tp.filmotheque.bo.User;
 import fr.eni.tp.filmotheque.service.PersonServices;
 
 @Controller
+@SessionAttributes({"userToken"})
 public class MainController {
 	
 	private PersonServices personService;
@@ -21,10 +24,9 @@ public class MainController {
 	public Person getAttributPerson() {
 		return new Person();
 	}
-
 	
 	@GetMapping("/accueil")
-	public String getMainPage() {
+	public String getMainPage(@ModelAttribute("userToken") User userToken) {
 		return "index";
 	}
 	

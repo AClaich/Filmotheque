@@ -53,9 +53,9 @@
 					</nav>
 
 				<!-- Main -->
-				<form:form href="" modelAttribute="user">
+				<form:form action="/filmotheque/authentication" modelAttribute="user" method="POST">
 				
-					<form:label path="username">Nom d'utilisateur</form:label><form:input path="username" />
+					<form:label path="username">Nom d'utilisateur</form:label><form:input path="username"/>
 					
 					<form:label path="password">Mot de passe</form:label><form:input path="password" class="password" type="password"/>
 				

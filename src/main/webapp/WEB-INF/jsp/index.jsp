@@ -55,6 +55,8 @@
 					</nav>
 
 				<!-- Main -->
+<c:out value="${userToken.getRole().getRoleName()}" />
+
 					<div id="main">
 						<div class="inner">
 							<header>

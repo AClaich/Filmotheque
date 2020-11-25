@@ -1,13 +1,11 @@
 package fr.eni.tp.filmotheque.bo;
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Role {
@@ -17,24 +15,30 @@ public class Role {
 	private int id;
 	
 	@Column(length = 50, nullable = false)
-	private String role;
+	private String roleName;
 	
 	public Role() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 	
-	public Role(String role) {
-		this.role=role;
+	public Role(String roleName) {
+		super();
+		this.roleName=roleName;
 	}
 	
-	public String getRole() {
-		return role;
+	public String getRoleName() {
+		return roleName;
 	}
 	
-	public void setRole(String role) {
-		this.role = role;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", roleName=" + roleName + "]";
 	}
 	
-	
+
 } 
 

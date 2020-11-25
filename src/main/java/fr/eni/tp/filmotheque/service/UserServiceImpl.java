@@ -1,7 +1,7 @@
 package fr.eni.tp.filmotheque.service;
 
-import java.util.Optional;
-
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import fr.eni.tp.filmotheque.bo.User;
@@ -11,32 +11,40 @@ import fr.eni.tp.filmotheque.dal.UserRepository;
 public class UserServiceImpl implements UserServices{
 
 	private UserRepository userDAO;
+	private PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 	
 	public UserServiceImpl(UserRepository userDAO) {
 		this.userDAO=userDAO;
 	}
 	
 	@Override
-	public Optional<User> getUser(User user) {
-		return userDAO.findById(user.getUsername());
+	public User getUser(User user) {
+		return userDAO.findByUsername(user.getUsername());
 	}
 
 	@Override
 	public void addUser(User user) {
-		// TODO Auto-generated method stub
+		userDAO.save(user);
 		
 	}
 
 	@Override
 	public void deleteUser(User user) {
-		// TODO Auto-generated method stub
-		
+		userDAO.delete(user);
 	}
 
 	@Override
 	public void modifyUser(User user) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean checkUser(User user) {
+
+		User userFromDB = userDAO.findByUsername(user.getUsername());
+
+		return encoder.matches(user.getPassword(), userFromDB.getPassword());
 	}
 	
 }
