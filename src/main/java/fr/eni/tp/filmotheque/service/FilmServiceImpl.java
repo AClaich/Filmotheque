@@ -1,7 +1,6 @@
 package fr.eni.tp.filmotheque.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -16,6 +15,11 @@ public class FilmServiceImpl implements FilmService{
 	public FilmServiceImpl(FilmRepository filmDAO) {
 		this.filmDAO = filmDAO;
 	}
+	
+	@Override
+	public List<Film> searchListFilm(){
+		return (List<Film>)filmDAO.findAll();
+	}
 
 	@Override
 	public void addFilm(Film film) {
@@ -23,25 +27,13 @@ public class FilmServiceImpl implements FilmService{
 	}
 	
 	@Override
-	public void deleteFilm(Long nofilm) {
-		filmDAO.deleteById(nofilm);
+	public void deleteFilm(Long id) {
+		filmDAO.deleteById(id);
 	}
 	
 	@Override
 	public void modifyFilm(Film film) {
 		filmDAO.save(film);
 	}
-
-	@Override
-	public List<Film> searchListFilm(){
-		return (List<Film>)filmDAO.findAll()
-;	}
-	
-	@Override
-	public Optional<Film> searchFilm(Long noFilm) {
-		
-		return filmDAO.findById(noFilm);
-	}
-	
 	
 }
