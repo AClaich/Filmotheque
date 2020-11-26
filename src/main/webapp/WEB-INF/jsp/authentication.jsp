@@ -15,6 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./css/main.css" />
 		<noscript><link rel="stylesheet" href="./css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap-theme.min.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/commun.css">
+		<link rel="icon" href="img/favicon.ico" />
+
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -41,27 +48,24 @@
 					</header>
 
 				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.jsp">Home</a></li>
-							<li><a href="generic.jsp">Ipsum veroeros</a></li>
-							<li><a href="generic.jsp">Tempus etiam</a></li>
-							<li><a href="generic.jsp">Consequat dolor</a></li>
-							<li><a href="elements.jsp">Elements</a></li>
-						</ul>
-					</nav>
+
+	<jsp:include page="menu.jsp" />
 
 				<!-- Main -->
-				<form:form action="/filmotheque/authentication" modelAttribute="user" method="POST">
+				<div class="containeur">
+				
+				<c:if test="${ userError == true}"><p class="error">Utilisateur non valide. Veuillez réessayer.</p></c:if>
+				<form:form action="/filmotheque/connexion" modelAttribute="user" method="POST">
 				
 					<form:label path="username">Nom d'utilisateur</form:label><form:input path="username"/>
+					<form:errors path="username" cssClass="erreur"/>
 					
 					<form:label path="password">Mot de passe</form:label><form:input path="password" class="password" type="password"/>
+					<form:errors path="password" cssClass="erreur" />
 				
 				<input type="submit" value="Valider"/>
 				</form:form>
-
+</div>
 				<!-- Footer -->
 
 	<jsp:include page="footer.jsp" />

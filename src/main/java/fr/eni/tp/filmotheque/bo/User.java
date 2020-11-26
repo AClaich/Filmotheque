@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 
 
 @Entity
@@ -15,11 +16,13 @@ public class User {
 	@Column(length = 50)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(length = 50, nullable = false, unique = true)
+	@NotBlank
 	private String username;
-	
+
 	@Column(length = 500, nullable = false)
+	@NotBlank
 	private String password;
 
 	@ManyToOne

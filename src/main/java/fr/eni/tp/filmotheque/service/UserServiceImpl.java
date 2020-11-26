@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserServices{
 	}
 	
 	@Override
-	public User getUser(User user) {
+	public User getUser(User user) throws Exception {
 		return userDAO.findByUsername(user.getUsername());
 	}
 
@@ -40,9 +40,9 @@ public class UserServiceImpl implements UserServices{
 	}
 
 	@Override
-	public boolean checkUser(User user) {
+	public boolean checkUser(User user) throws Exception {
 
-		User userFromDB = userDAO.findByUsername(user.getUsername());
+		User userFromDB = getUser(user);
 
 		return encoder.matches(user.getPassword(), userFromDB.getPassword());
 	}

@@ -1,15 +1,12 @@
 package fr.eni.tp.filmotheque.dal;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import fr.eni.tp.filmotheque.bo.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
-	@Query(value = "SELECT u FROM User u WHERE u.username = :username")
-	public User findByUsername(@Param("username") String username);
+	public User findByUsername(String username) throws Exception;
 }

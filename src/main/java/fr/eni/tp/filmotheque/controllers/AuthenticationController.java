@@ -1,11 +1,16 @@
 package fr.eni.tp.filmotheque.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.context.request.WebRequest;
 
 import fr.eni.tp.filmotheque.bo.User;
 import fr.eni.tp.filmotheque.service.UserServices;
@@ -30,24 +35,41 @@ public class AuthenticationController {
 		return new User();
 	}
 	
-	@GetMapping("/authentication")
-	public String getAuthentificationPage(@ModelAttribute User user) {
+	@GetMapping("/login")
+	public String getAuthentificationPage(Model model) {
+		model.addAttribute("user", new User());
 		return "authentication";
 	}
 	
-	@PostMapping("/authentication")
-	public String connexion(@ModelAttribute User user, Model model) {
+	@PostMapping("/connexion")
+	public String connexion(@Valid @ModelAttribute User user, BindingResult result, Model model) throws Exception {
+
+		if(result.hasErrors()) {
+			return "authentication";
+		}
 		
-		boolean userValid = userService.checkUser(user);
-		System.out.println(userValid);
+		boolean userValid = false;
+		try {
+			userValid = userService.checkUser(user);
+		} catch (Exception e) {
+			model.addAttribute("userError", true);
+			return "authentication";
+		}
 		
 		if(userValid) {
 			User userFromBd = userService.getUser(user);
 			model.addAttribute("userToken", userFromBd);
 			return "redirect:/accueil";
 		}
-		System.out.println("not good");
 		return "authentication";
+	}
+	
+	@GetMapping("/logout")
+	public String deconnexion(Model model, @ModelAttribute("userToken") User userToken, WebRequest request, SessionStatus status) {
+		status.setComplete();
+		request.removeAttribute("userToken", WebRequest.SCOPE_SESSION);
+
+		return "redirect:/accueil";
 	}
 
 }

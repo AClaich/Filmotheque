@@ -43,16 +43,7 @@
 					</header>
 
 				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.jsp">Home</a></li>
-							<li><a href="generic.jsp">Ipsum veroeros</a></li>
-							<li><a href="generic.jsp">Tempus etiam</a></li>
-							<li><a href="generic.jsp">Consequat dolor</a></li>
-							<li><a href="elements.jsp">Elements</a></li>
-						</ul>
-					</nav>
+	<jsp:include page="menu.jsp" />
 
 				<!-- Main -->
 <c:out value="${userToken.getRole().getRoleName()}" />

@@ -3,7 +3,6 @@ package fr.eni.tp.filmotheque.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.tp.filmotheque.bo.Person;
@@ -25,22 +24,13 @@ public class MainController {
 		return new Person();
 	}
 	
-	@GetMapping("/accueil")
+	@ModelAttribute("userToken")
+	public User getUserToken() {
+		return new User();
+	}
+	
+	@GetMapping({"/accueil","","/"})
 	public String getMainPage(@ModelAttribute("userToken") User userToken) {
 		return "index";
-	}
-	
-	@GetMapping("/ajout_person")
-	public String setPerson() {
-		
-		return "accueil";
-	}
-	
-	@PostMapping("/ajout_person/validate")
-	public String addPerson(@ModelAttribute("person") Person person) {
-		
-		this.personService.addPerson(person);
-		
-		return "redirect:/accueil";
 	}
 }

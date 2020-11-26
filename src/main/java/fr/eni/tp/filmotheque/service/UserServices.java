@@ -10,7 +10,7 @@ public interface UserServices {
 	
 	public void modifyUser(User user);
 
-	public User getUser(User user);
+	public User getUser(User user) throws Exception;
 	
-	public boolean checkUser(User user);
+	public boolean checkUser(User user) throws Exception;
 }
