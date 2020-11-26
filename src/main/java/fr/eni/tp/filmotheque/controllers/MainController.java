@@ -1,7 +1,5 @@
 package fr.eni.tp.filmotheque.controllers;
 
-import java.util.Optional;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,16 +15,6 @@ import fr.eni.tp.filmotheque.service.FilmService;
 @Controller
 @SessionAttributes({"userToken"})
 public class MainController {
-	
-	@GetMapping("/filmotheque")
-	public String getAuthentificationPage() {
-		return "index";
-	}
-	
-////////////////////////////////////////////////////////////////////////////////////////
-//                				 FILM
-////////////////////////////////////////////////////////////////////////////////////////
-	
 	private FilmService service;
 	
 	public MainController(FilmService service) {
@@ -45,15 +33,13 @@ public class MainController {
 	}
 	
 	//Affichage de la liste des films sur la page d'accueil
-	@GetMapping("/accueil")
+	@GetMapping({"/accueil","","/"})
 	public String listFilm(Model model, @ModelAttribute("userToken") User userToken) {
-		
 		model.addAttribute("listFilm", service.searchListFilm());
-		
 		return "index";
 	}
 	
-	@PostMapping({"/accueil","","/"})
+	@PostMapping("/add")
 	public String saveFilm(@ModelAttribute("film") Film film) {
         
 		if(film.getId()==null) {
@@ -77,10 +63,7 @@ public class MainController {
 	@GetMapping({ "/modify"})
 	public String modifyFilm(@RequestParam Long noFilm, 
 			Model model) {
-		
-		Optional<Film> filmOpt =  service.searchFilm(noFilm);
-		model.addAttribute("film", filmOpt.get());
-		model.addAttribute("listFilm", service.searchListFilm());
+
 		
 		 return "index";
 	}
