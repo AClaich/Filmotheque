@@ -10,12 +10,14 @@
 -->
 <html>
 	<head>
-		<title>Phantom by HTML5 UP</title>
+		<title>Filmotheque</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./css/main.css" />
 		<noscript><link rel="stylesheet" href="./css/noscript.css" /></noscript>
-
+		<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/commun.css">
 
 	</head>
 	<body class="is-preload">
@@ -28,7 +30,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.jsp" class="logo">
+								<a href="/filmotheque/accueil" class="logo">
 									<span class="symbol"><img src="./img/logo.svg" alt="" /></span><span class="title">Phantom</span>
 								</a>
 
@@ -46,7 +48,6 @@
 	<jsp:include page="menu.jsp" />
 
 				<!-- Main -->
-<c:out value="${userToken.getRole().getRoleName()}" />
 
 					<div id="main">
 						<div class="inner">

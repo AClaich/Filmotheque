@@ -10,7 +10,7 @@
 -->
 <html>
 	<head>
-		<title>Phantom by HTML5 UP</title>
+		<title>Connexion</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./css/main.css" />
@@ -33,8 +33,8 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.jsp" class="logo">
-									<span class="symbol"><img src="./img/logo.svg" alt="" /></span><span class="title">Filmotheque</span>
+								<a href="/filmotheque/accueil" class="logo">
+									<span class="symbol"><img src="./img/logo.svg" alt="" /></span><span class="title">Phantom</span>
 								</a>
 
 							<!-- Nav -->
