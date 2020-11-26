@@ -11,7 +11,7 @@ public class Film {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(length = 50, nullable = false)
 	private String title;
@@ -19,13 +19,27 @@ public class Film {
 	@Column(length = 50, nullable = false)
 	private int releaseYear;
 	
+	
 	public Film() {
 		// TODO Auto-generated constructor stub
 	}
+	
 
-	public Film(String title, int releaseYear) {
-		this.title=title;
-		this.releaseYear=releaseYear;
+	
+	public Film(Long id, String title, int releaseYear) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.releaseYear = releaseYear;
+	}
+
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -44,9 +58,10 @@ public class Film {
 		this.releaseYear = releaseYear;
 	}
 
-	public Object getId() {
-		// TODO Auto-generated method stub
-		return null;
+
+	@Override
+	public String toString() {
+		return "Film [id=" + id + ", title=" + title + ", releaseYear=" + releaseYear + "]";
 	}
 
 

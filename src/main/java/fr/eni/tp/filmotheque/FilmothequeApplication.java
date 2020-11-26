@@ -7,14 +7,18 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
+import fr.eni.tp.filmotheque.bo.Role;
+import fr.eni.tp.filmotheque.bo.User;
 import fr.eni.tp.filmotheque.dal.RoleRepository;
 import fr.eni.tp.filmotheque.dal.UserRepository;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class FilmothequeApplication {
 
-//	private PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+	private PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 	
 	public static void main(String[] args) {
 		SpringApplication.run(FilmothequeApplication.class, args);
