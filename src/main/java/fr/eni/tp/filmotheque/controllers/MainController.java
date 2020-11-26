@@ -26,4 +26,9 @@ public class MainController {
 	public String getMainPage(@ModelAttribute("userToken") User userToken) {
 		return "index";
 	}
+	
+	@GetMapping("/monCompte")
+	public String getMyAccountPage(@ModelAttribute("userToken") User userToken) {
+		return "monCompte";
+	}
 }

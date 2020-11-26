@@ -31,7 +31,7 @@
 
 							<!-- Logo -->
 								<a href="/filmotheque/accueil" class="logo">
-									<span class="symbol"><img src="./img/logo.svg" alt="" /></span><span class="title">Phantom</span>
+									<span class="symbol"><img src="./img/logo.svg" alt="" /></span><span class="title">Filmotheque</span>
 								</a>
 
 							<!-- Nav -->

@@ -23,7 +23,57 @@
 		<link rel="icon" href="img/favicon.ico" />
 
 	</head>
-<body>
+<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-</body>
+				<!-- Header -->
+					<header id="header">
+					
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="/filmotheque/accueil" class="logo">
+									<span class="symbol"><img src="./img/logo.svg" alt="" /></span><span class="title">Filmotheque</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+
+	<jsp:include page="menu.jsp" />
+
+				<!-- Main -->
+				<div class="containeur">
+				
+				<c:if test="${ userError == true}"><p class="error">Utilisateur non valide. Veuillez réessayer.</p></c:if>
+					<form:form  modelAttribute="userToken">
+						<div>
+						<form:label path="username">Nom d'utilisateur</form:label><form:input style="width: 100px" path="username"/>
+						<form:errors path="username" cssClass="erreur"/>
+					</div>
+					</form:form>
+				</div>
+				<!-- Footer -->
+
+	<jsp:include page="footer.jsp" />
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="./js/jquery.min.js"></script>
+			<script src="./js/browser.min.js"></script>
+			<script src="./js/breakpoints.min.js"></script>
+			<script src="./js/util.js"></script>
+			<script src="./js/main.js"></script>
+
+	</body>
 </html>

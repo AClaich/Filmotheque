@@ -26,9 +26,9 @@
 							&& !userToken.getRole().getRoleName().equals('User') }">
 							<li><a href="/filmotheque/login">SE CONNECTER</a></li>
 							</c:if>
-							<!--<c:if test="${userToken.getRole().getRoleName().equals('Admin') || userToken.getRole().getRoleName().equals('User') }">
-							<li><a href="/filmotheque/login">MON COMPTE | ${userToken.getUsername().toUpperCase()}</a></li>
-							</c:if>-->
+							<c:if test="${userToken.getRole().getRoleName().equals('Admin') || userToken.getRole().getRoleName().equals('User') }">
+							<li><a href="/filmotheque/monCompte">MON COMPTE | ${userToken.getUsername().toUpperCase()}</a></li>
+							</c:if>
 							<c:if test="${userToken.getRole().getRoleName().equals('Admin') 
 							|| userToken.getRole().getRoleName().equals('User') }">
 							<li><a href="/filmotheque/logout">SE DECONNECTER</a></li>
