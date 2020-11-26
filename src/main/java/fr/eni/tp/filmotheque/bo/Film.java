@@ -22,7 +22,7 @@ public class Film {
 	public Film() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Film(String title, int releaseYear) {
 		this.title=title;
 		this.releaseYear=releaseYear;
@@ -43,6 +43,13 @@ public class Film {
 	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
 	}
+
+	public Object getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	
 	
 }

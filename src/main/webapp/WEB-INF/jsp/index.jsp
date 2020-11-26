@@ -3,11 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>Filmotheque</title>
@@ -52,140 +48,83 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>This is Phantom, a free, fully responsive site<br />
-								template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+								<h1>Welcome to the Film Library<br />
+								Find your film and give us your opinion.</h1>
+								<p>Filter in preparation</p>
 							</header>
 							<section class="tiles">
-								<article class="style1">
+								<article class="style1" >
 									<span class="image">
-										<img src="./img/pic01.jpg" alt="" />
+										<img src="./img/fight_club.jpg" alt="" height="480"/>
 									</span>
 									<a href="generic.jsp">
-										<h2>Magna</h2>
+										<h2>Fight Club</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Le narrateur, vit seul, travaille seul, dort seul, comme beaucoup d'autres personnes seules qui connaissent la misère morale et sexuelle. 
+											 C'est pourquoi il va devenir membre du Fight club, un lieu clandestin dirigé par Tyler Durden, anarchiste entre gourou et philosophe. </p>
 										</div>
 									</a>
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="./img/pic02.jpg" alt="" />
+										<img src="./img/H2G2.jpg" alt="" height="480"/>
 									</span>
 									<a href="generic.jsp">
-										<h2>Lorem</h2>
+										<h2>H2G2</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Sale journée pour le Terrien Arthur Dent. Sa maison est sur le point d'être rasée par un bulldozer, il découvre que son meilleur ami,
+											 Ford Prefect, est un extraterrestre et pour couronner le tout, la Terre va être pulvérisée dans quelques minutes pour faire de la place 
+											 à une voie express hyperspatiale. Arthur a une chance de survivre, mais il doit pour cela se faire prendre en stop par un vaisseau spatial,
+											  avec l'aide de Ford. Sa plus grande aventure va commencer au moment où notre propre monde disparaît... Arthur se jette dans l'inconnu et 
+											  entame un délirant périple au cours duquel il va découvrir la véritable nature de l'univers. 
+</p>
 										</div>
 									</a>
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="./img/pic03.jpg" alt="" />
+										<img src="./img/Interstellar.jpg" alt="" height="480"/>
 									</span>
 									<a href="generic.jsp">
-										<h2>Feugiat</h2>
+										<h2>Interstellar</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Le film raconte les aventures d’un groupe d’explorateurs qui utilisent une faille récemment découverte dans l’espace-temps afin de repousser 
+											les limites humaines et partir à la conquête des distances astronomiques dans un voyage interstellaire. </p>
 										</div>
 									</a>
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="./img/pic04.jpg" alt="" />
+										<img src="./img/parasite.png" alt="" height="480"/>
 									</span>
 									<a href="generic.jsp">
-										<h2>Tempus</h2>
+										<h2>Parasite</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Toute la famille de Ki-taek est au chômage, et s’intéresse fortement au train de vie de la richissime famille Park. Un jour, leur fils réussit 
+											à se faire recommander pour donner des cours particuliers d’anglais chez les Park. C’est le début d’un engrenage incontrôlable, dont personne ne 
+											sortira véritablement indemne... </p>
 										</div>
 									</a>
 								</article>
 								<article class="style5">
 									<span class="image">
-										<img src="./img/pic05.jpg" alt="" />
+										<img src="./img/pulp_fiction.jpg" alt="" height="480"/>
 									</span>
 									<a href="generic.jsp">
-										<h2>Aliquam</h2>
+										<h2>Pulp Fiction</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>L'odyssée sanglante et burlesque de petits malfrats dans la jungle de Hollywood à travers trois histoires qui s'entremêlent. </p>
 										</div>
 									</a>
 								</article>
 								<article class="style6">
 									<span class="image">
-										<img src="./img/pic06.jpg" alt="" />
+										<img src="./img/Vol au dessus d'un nid de coucou.jpg" alt=""  height="480"/>
 									</span>
 									<a href="generic.jsp">
-										<h2>Veroeros</h2>
+										<h2>Vol au dessus d'un nid de coucou</h2>
 										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="./img/pic07.jpg" alt="" />
-									</span>
-									<a href="generic.jsp">
-										<h2>Ipsum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="./img/pic08.jpg" alt="" />
-									</span>
-									<a href="generic.jsp">
-										<h2>Dolor</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style1">
-									<span class="image">
-										<img src="./img/pic09.jpg" alt="" />
-									</span>
-									<a href="generic.jsp">
-										<h2>Nullam</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="./img/pic10.jpg" alt="" />
-									</span>
-									<a href="generic.jsp">
-										<h2>Ultricies</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="./img/pic11.jpg" alt="" />
-									</span>
-									<a href="generic.jsp">
-										<h2>Dictum</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="./img/pic12.jpg" alt="" />
-									</span>
-									<a href="generic.jsp">
-										<h2>Pretium</h2>
-										<div class="content">
-											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+											<p>Rebellion dans un hôpital psychiatrique à l'instigation d'un malade qui se révolte contre la dureté d'une infirmière. </p>
 										</div>
 									</a>
 								</article>

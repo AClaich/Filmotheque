@@ -20,8 +20,10 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="/filmotheque/accueil">ACCUEIL</a></li>
+							<c:if test="${userToken.getRole().getRoleName().equals('Admin')}">
 							<li><a href="/filmotheque/accueil">AJOUTER FILM</a></li>
 							<li><a href="/filmotheque/accueil">ACTEUR / REALISATEUR</a></li>
+							</c:if>
 							<c:if test="${!userToken.getRole().getRoleName().equals('Admin') 
 							&& !userToken.getRole().getRoleName().equals('User') }">
 							<li><a href="/filmotheque/login">SE CONNECTER</a></li>
