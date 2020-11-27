@@ -25,7 +25,7 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="/filmotheque/filmotheque" class="logo">
+								<a href="/filmotheque/accueil" class="logo">
 									<span class="symbol"><img src="./img/logo.svg" alt="" /></span><span class="title">Filmotheque</span>
 								</a>
 

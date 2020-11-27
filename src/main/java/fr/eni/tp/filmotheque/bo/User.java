@@ -1,11 +1,17 @@
 package fr.eni.tp.filmotheque.bo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
 
@@ -28,23 +34,34 @@ public class User {
 	@ManyToOne
 	private Role role;
 	
+	@OneToMany(cascade = CascadeType.ALL, 
+			fetch=FetchType.EAGER, 
+			orphanRemoval=true,
+			mappedBy="user")
+	private List<Opinion> opinions;
+	
 	public User() {
 		
 	}
 	
 	public User(String username) {
 		this.username=username;
+		opinions = new ArrayList<Opinion>();
 	}
 	
 	public User(String username, String password) {
 		this.username=username;
 		this.password=password;
+
+		opinions = new ArrayList<Opinion>();
 	}
 	
 	public User(String username, String password, Role role) {
 		this.username=username;
 		this.password=password;
 		this.role=role;
+
+		opinions = new ArrayList<Opinion>();
 	}
 
 	public String getUsername() {
@@ -71,6 +88,10 @@ public class User {
 		this.role = role;
 	}
 
+	public void addOpinion(Opinion opinion) {
+		opinions.add(opinion);
+	}
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";

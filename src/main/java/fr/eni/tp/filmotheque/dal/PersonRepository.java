@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import fr.eni.tp.filmotheque.bo.Person;
 
-@Repository
+
 public interface PersonRepository extends JpaRepository<Person, Integer>{
 }

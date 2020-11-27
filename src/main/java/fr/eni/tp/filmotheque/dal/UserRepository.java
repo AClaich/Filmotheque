@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import fr.eni.tp.filmotheque.bo.User;
 
-@Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
 	public User findByUsername(String username) throws Exception;

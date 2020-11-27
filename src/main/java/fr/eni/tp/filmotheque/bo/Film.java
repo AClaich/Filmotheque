@@ -1,10 +1,16 @@
 package fr.eni.tp.filmotheque.bo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Film {
@@ -19,6 +25,12 @@ public class Film {
 	@Column(length = 50, nullable = false)
 	private int releaseYear;
 	
+	@OneToMany(cascade = CascadeType.ALL, 
+			fetch=FetchType.EAGER, 
+			orphanRemoval=true,
+			mappedBy="film")
+	private List<Opinion> opinions;
+	
 	
 	public Film() {
 		// TODO Auto-generated constructor stub
@@ -26,11 +38,17 @@ public class Film {
 	
 
 	
-	public Film(Long id, String title, int releaseYear) {
-		super();
-		this.id = id;
+	public Film(String title, int releaseYear) {
 		this.title = title;
 		this.releaseYear = releaseYear;
+		opinions = new ArrayList<Opinion>();
+	}
+	
+	public Film(String title, int releaseYear, Opinion opinion) {
+		this.title = title;
+		this.releaseYear = releaseYear;
+		opinions = new ArrayList<Opinion>();
+		addOpinion(opinion);
 	}
 
 	
@@ -58,6 +76,9 @@ public class Film {
 		this.releaseYear = releaseYear;
 	}
 
+	public void addOpinion(Opinion opinion) {
+		opinions.add(opinion);
+	}
 
 	@Override
 	public String toString() {

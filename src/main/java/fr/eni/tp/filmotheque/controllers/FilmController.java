@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.tp.filmotheque.bo.Film;
-import fr.eni.tp.filmotheque.bo.User;
 import fr.eni.tp.filmotheque.service.FilmService;
 
 @Controller
