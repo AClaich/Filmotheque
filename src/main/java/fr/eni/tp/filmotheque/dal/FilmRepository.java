@@ -6,4 +6,5 @@ import fr.eni.tp.filmotheque.bo.Film;
 
 public interface FilmRepository extends JpaRepository<Film, Long>{
 
+	public Film findByTitle(String title);
 }

@@ -7,13 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
-import fr.eni.tp.filmotheque.bo.Film;
-import fr.eni.tp.filmotheque.bo.Opinion;
-import fr.eni.tp.filmotheque.bo.Role;
-import fr.eni.tp.filmotheque.bo.User;
 import fr.eni.tp.filmotheque.dal.FilmRepository;
 import fr.eni.tp.filmotheque.dal.OpinionRepository;
 import fr.eni.tp.filmotheque.dal.RoleRepository;
@@ -22,7 +16,7 @@ import fr.eni.tp.filmotheque.dal.UserRepository;
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class FilmothequeApplication {
 
-	private PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//	private PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 	
 	public static void main(String[] args) {
 		SpringApplication.run(FilmothequeApplication.class, args);
@@ -36,19 +30,27 @@ public class FilmothequeApplication {
 	@Bean
 	public CommandLineRunner demo(UserRepository userRepository, RoleRepository roleRepository, OpinionRepository opinionRepository, FilmRepository filmRepository) {
 		return (args) -> {
-			
-			Role admin = new Role("Admin");
-			Role user = new Role("User");
-			
-			roleRepository.save(admin);
-			roleRepository.save(user);
-			
-			User alexis = new User("Alexis", encoder.encode("Alexis"), user);
-			User melanie = new User("Melanie", encoder.encode("Melanie"), admin);
-			User user1 = new User("User1", encoder.encode("User1"), user);
-			
-			alexis.setRole(admin);
-			
+//			
+//			Role admin = new Role("Admin");
+//			Role user = new Role("User");
+//			
+//			roleRepository.save(admin);
+//			roleRepository.save(user);
+//			
+//			User alexis = new User("Alexis", encoder.encode("Alexis"), user);
+//			User melanie = new User("Melanie", encoder.encode("Melanie"), admin);
+//			User user1 = new User("User1", encoder.encode("User1"), user);
+//			
+//			alexis.setRole(admin);
+//			
+//
+//			Film fightClub = new Film("Fight Club", 1999);
+//			Film H2G2 = new Film("H2G2", 2005);
+//			Film interstellar = new Film("Interstellar", 2014);
+//			Film Parasite = new Film("Parasite", 2019);
+//			Film pulpFiction = new Film("Pulp Fiction", 1994);
+//			Film nidDeCoucou = new Film("Vol au dessus d\\'un nid de coucou", 1976);
+//			
 //			Opinion goodOpinion = new Opinion("Plutôt un bon film");
 //			Opinion badOpinion = new Opinion("Vraiment naze");
 //			Opinion boringOpinion = new Opinion("\r\n"
@@ -61,33 +63,27 @@ public class FilmothequeApplication {
 //					+ "\r\n"
 //					+ "Mais cet esprit libre, cette envie de s’absoudre de ce conformisme va prendre une tangente plus radicale car derrière ce propos, il y a un projet, le projet chaos. Ces hommes vont devenir une sorte de milice terroriste avec des règles bien précises où l'on verra cohabiter un chef et ses sbires. Mais cette société n'est qu'une sorte de mirage, qu'une façade pour faire place à un autre niveau de lecture, celui de la construction et de l’identité d'un homme. Le narrateur va alors se voir dans le \"miroir\" et va comprendre qui il est et qui il n'est pas ou ne veut pas être. Sous ses airs de film culte un trop immédiat, se cache un film fastidieux et détonnant sur l'identité d'un homme et sur la construction de notre façon d’être. Porté par une direction d'acteurs irréprochable, une mise en scène stupéfiante quoique un peu lourdingue, Fight Club est le genre d'oeuvre peu commune hautement recommandable.\r\n");
 //			
-//			alexis.addOpinion(badOpinion);
 //			melanie.addOpinion(goodOpinion);
+//			alexis.addOpinion(badOpinion);
 //			user1.addOpinion(boringOpinion);
-			
-			Film fightClub = new Film("Fight Club", 1999);
-			Film H2G2 = new Film("H2G2", 2005);
-			Film interstellar = new Film("Interstellar", 2014);
-			Film Parasite = new Film("Parasite", 2019);
-			Film pulpFiction = new Film("Pulp Fiction", 1994);
-			Film nidDeCoucou = new Film("Vol au dessus d\\'un nid de coucou", 1976);
-			
-//			fightClub.addOpinion(badOpinion);
+//
 //			fightClub.addOpinion(goodOpinion);
+//			fightClub.addOpinion(badOpinion);
+//			fightClub.addOpinion(boringOpinion);
 //			
-			// save a few users
-
-			userRepository.save(alexis);
-			userRepository.save(melanie);
-			userRepository.save(user1);
-			
-			filmRepository.save(fightClub);
-			filmRepository.save(H2G2);
-			filmRepository.save(interstellar);
-			filmRepository.save(Parasite);
-			filmRepository.save(pulpFiction);
-			filmRepository.save(nidDeCoucou);
-
+//			// save a few users
+//
+//			filmRepository.save(fightClub);
+//			filmRepository.save(H2G2);
+//			filmRepository.save(interstellar);
+//			filmRepository.save(Parasite);
+//			filmRepository.save(pulpFiction);
+//			filmRepository.save(nidDeCoucou);
+//			
+//
+//			userRepository.save(alexis);
+//			userRepository.save(melanie);
+//			userRepository.save(user1);
 		};
 	}
 }

@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -25,30 +26,25 @@ public class Film {
 	@Column(length = 50, nullable = false)
 	private int releaseYear;
 	
-	@OneToMany(cascade = CascadeType.ALL, 
-			fetch=FetchType.EAGER, 
-			orphanRemoval=true,
-			mappedBy="film")
+	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER, orphanRemoval=true)
+	@JoinColumn(name="film_id")
 	private List<Opinion> opinions;
-	
 	
 	public Film() {
 		// TODO Auto-generated constructor stub
 	}
 	
-
-	
 	public Film(String title, int releaseYear) {
 		this.title = title;
 		this.releaseYear = releaseYear;
-		opinions = new ArrayList<Opinion>();
+		this.opinions=new ArrayList<Opinion>();
 	}
 	
 	public Film(String title, int releaseYear, Opinion opinion) {
 		this.title = title;
 		this.releaseYear = releaseYear;
-		opinions = new ArrayList<Opinion>();
-		addOpinion(opinion);
+		opinions=new ArrayList<Opinion>();
+		opinions.add(opinion);
 	}
 
 	
@@ -75,7 +71,7 @@ public class Film {
 	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
 	}
-
+	
 	public void addOpinion(Opinion opinion) {
 		opinions.add(opinion);
 	}

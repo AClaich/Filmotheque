@@ -8,6 +8,8 @@ public interface FilmService {
 	
 	List<Film> searchListFilm();
 	
+	public Film searchFilm(String filmTitle);
+	
 	void addFilm(Film film);
 	void deleteFilm(Long id);
 	void modifyFilm(Film film);

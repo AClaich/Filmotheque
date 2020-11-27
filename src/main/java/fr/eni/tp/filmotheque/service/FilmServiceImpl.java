@@ -20,6 +20,11 @@ public class FilmServiceImpl implements FilmService{
 	public List<Film> searchListFilm(){
 		return (List<Film>)filmDAO.findAll();
 	}
+	
+	@Override
+	public Film searchFilm(String filmTitle) {
+		return filmDAO.findByTitle(filmTitle);
+	}
 
 	@Override
 	public void addFilm(Film film) {

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -10,11 +10,14 @@
 -->
 <html>
 	<head>
-		<title>Filmotheque</title>
+		<title>Détails</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./css/main.css" />
 		<noscript><link rel="stylesheet" href="./css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/commun.css">
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -44,7 +47,6 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<c:forEach var="film" items="${listFilm}">
 								<h1>${film.title}</h1>								
 								<span class="image main"><img src="./img/pic13.jpg" alt="" /></span>
 									<form:form method="GET" action="/filmotheque/detail" modelAttribute="film" >
@@ -77,7 +79,6 @@
 									<a href="/demoJpa/modifier?noPers=${personne.id}">Modifier</a></td>
 								</tr>
 								
-							</c:forEach>
 							-->
 						</div>
 					</div>

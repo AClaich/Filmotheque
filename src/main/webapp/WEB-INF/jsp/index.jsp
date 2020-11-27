@@ -50,9 +50,8 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Welcome to the Film Library<br />
-								Find your film and give us your opinion.</h1>
-								<p>Filter in preparation</p>
+								<h1>Bienvenue dans le filmotheque<br />
+								Trouvez votre film et donnez nous votre avis.</h1>
 							</header>
 							<section class="tiles">
 
@@ -61,7 +60,7 @@
 									<span class="image">
 										<img src="./img/fight_club.jpg" alt="" height="480"/>
 									</span>
-									<a href="/filmotheque/detail">
+									<a href="/filmotheque/detail/${film.title}">
 										<h2>${film.title}</h2>
 										<div class="content">
 											<p>${film.releaseYear }</p>

@@ -65,7 +65,7 @@ public class AuthenticationController {
 	}
 	
 	@GetMapping("/logout")
-	public String deconnexion(Model model, @ModelAttribute("userToken") User userToken, WebRequest request, SessionStatus status) {
+	public String deconnexion(@ModelAttribute("userToken") User userToken, WebRequest request, SessionStatus status) {
 		status.setComplete();
 		request.removeAttribute("userToken", WebRequest.SCOPE_SESSION);
 

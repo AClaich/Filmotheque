@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -21,10 +22,10 @@ public class FilmController {
 	//FILM - HOME PAGE
 	////////////////////////////////////////////////////////////////////////////////////////
 	
-	private FilmService service;
+	private FilmService filmService;
 	
 	public FilmController(FilmService service) {
-	this.service = service;
+	this.filmService = service;
 	}
 	
 	@ModelAttribute("film")
@@ -42,9 +43,9 @@ public class FilmController {
 	Film film = new Film();
 	film.setTitle(newFilm);
 	if(film.getId()==null) {
-		this.service.addFilm(film);
+		this.filmService.addFilm(film);
 	}else {
-		service.modifyFilm(film);
+		filmService.modifyFilm(film);
 	}
 	
 	return "redirect:/accueil";
@@ -54,7 +55,7 @@ public class FilmController {
 	@GetMapping({ "/delete" })
 	public String deleteFilm(@RequestParam("noFilm") Long noFilm) {
 	
-	service.deleteFilm(noFilm);
+	filmService.deleteFilm(noFilm);
 	
 	return "redirect:/accueil";
 	}
@@ -75,7 +76,7 @@ public class FilmController {
 	@GetMapping({"/management"})
 	public String filmManagement(Model model) {
 	
-	List<Film> listFilm = service.searchListFilm();
+	List<Film> listFilm = filmService.searchListFilm();
 	model.addAttribute("listFilm", listFilm);
 	//System.out.println(listFilm);
 	return "filmFunctionality";
@@ -90,11 +91,12 @@ public class FilmController {
 	
 	// Affichage de la liste des films sur la page d'accueil
 	
-	@GetMapping("/detail")
-	public String detailFilm(Model model) {
+	@GetMapping("/detail/{title}")
+	public String detailFilm(Model model, @PathVariable(name = "title") String filmTitle) {
 	
-	List<Film> listFilm = service.searchListFilm();
-	model.addAttribute("listFilm", listFilm);
+	Film film = filmService.searchFilm(filmTitle);
+		
+	model.addAttribute("film", film);
 	
 	return "detail";
 	}
